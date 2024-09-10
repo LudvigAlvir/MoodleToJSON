@@ -17,7 +17,7 @@ const data = names.map((item, i) => {
 });
 
 function downloadJSON(jsonData, filename = "data.json") {
-  const jsonString = JSON.stringify(jsonData, null, 2); // Pretty print JSON with indentation
+  const jsonString = JSON.stringify(jsonData, null, 2);
   const blob = new Blob([jsonString], { type: "application/json" });
   const url = window.URL.createObjectURL(blob);
 
@@ -29,5 +29,4 @@ function downloadJSON(jsonData, filename = "data.json") {
   window.URL.revokeObjectURL(url);
 }
 
-// Call the download function with the data
 downloadJSON(data);
